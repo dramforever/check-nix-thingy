@@ -15,4 +15,5 @@ steps:
       - "echo 'experimental-features = nix-command flakes ca-references' >> /etc/nix/nix.conf"
       - "echo 'max-jobs = auto' >> /etc/nix/nix.conf"
       - "nix profile install github:NixOS/nixpkgs/nixos-unstable-small#git"
-      - "nix --repeat 5 build github:NixOS/nix#nix -vL"
+      - "nix build github:NixOS/nix#nix.inputDerivation"
+      - "nix --substituters '' --repeat 5 build github:NixOS/nix#nix -vL"
