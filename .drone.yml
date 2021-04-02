@@ -16,4 +16,4 @@ steps:
       - "echo 'max-jobs = auto' >> /etc/nix/nix.conf"
       - "nix profile install github:NixOS/nixpkgs/nixos-unstable-small#git"
       - "nix build github:NixOS/nix#nix.inputDerivation"
-      - "nix --repeat 20 build -vL"
+      - "nix flake check -vL"
